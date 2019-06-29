@@ -1,49 +1,22 @@
 {% load static %}
 <html>
-
-    <head> 
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel= "stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-theme.min.css">
-        <link rel = "stylesheet" href="{% static 'css/blog.css'%}">
+    <head>
         <title>Indian's Blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header">
-            <h1><a href="/">Indian's Blog</a></h1>
-        </div>
-        <div class="content container">
-    <div class="row">
-        <div class="col-md-8">
-            {% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        <p>published: {{ post.published_date }}</p>
-                    </div>
-                    <h2><a href="">{{ post.title }}</a></h2>
-                    <p>{{ post.text|linebreaksbr }}</p>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
         <div>
-            <p>Published: 28/06/2019, 1032 Hours</p>
-            <h2><a href="">Our First Post</a></h2>
-            <p>We need to know that Five Feet Apart is about a budding romance between two teens in treatment for cystic fibrosis(CF) a genetic disease affecting the lungs and leading to severely shortened life expectancy. Though the book is essentially a romance, larger issues of how serious illnesses affect families and the different ways patients deal with CF are important parts of the story.</p>
+            <h1><a href="/">Why not working? Blog</a></h1>
         </div>
 
-        <div>
-            <p>Published: 28/06/2019, 1043 Hours</p>
-            <h2><a href="">Our Second Post</a></h2>
-            <p>In this bittersweet romance, two teens struggling with cystic fibrosis find love where they least expect to: the hospital. Five Feet Apart starts out on the formulaic side. Stella's a straight arrow who's super organized and into coding, while Will's a rule-breaking artist. Their verbal sparring early in the book sounds forced. Stella and Will have serious emotional struggles because of their disease and their family issues. As they get to know each other, they grow emotionally and add a needed balance to each other's life. It's enjoyable to see the characters give each other important emotional gifts.</p>
-        </div>
-        
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
- 
- 
-<body>
-    <p>FIVE FEETS APART!!!</p>
-    <P>It works!!</P>
-</body>
 </html>
